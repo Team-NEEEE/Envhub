@@ -22,7 +22,7 @@ jobs:
           gitlab_token_name: ${{ secrets.TARGET_TOKEN_NAME }}
           gitlab_token: ${{ secrets.TARGET_TOKEN }}
         run: |
-          git remote add gitlab https://${gitlab_token_name}:${gitlab_token}@${gitlab_url#https://};
+          git remote add gitlab "https://${gitlab_token_name}:${gitlab_token}@${gitlab_url#https://}"
       - name: Gitlab의 backend 브랜치로 강제 푸시
         run: |
           git push -f gitlab HEAD:backend
